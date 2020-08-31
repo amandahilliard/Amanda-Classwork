@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1 Classwork</title>
+</head>
+<body>
+    <style>
+        td{
+            text-align: center;
+        }
+    </style>
+    <table>
+        <tr class="row">
+            <th></th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+        </tr>
+        <tr class="row">
+            <th>Morning</th>
+            <td colspan="5" rowspan="2" style="background-color: aqua;">Open Hours</td>
+            <td colspan="2" style="background-color: blueviolet;">Appointment Only</td>
+        </tr>
+        <tr class="row">
+            <th>Afternoon</th>
+            <td colspan="2" style="background-color: darkgreen;">Closed</td>
+        </tr>
+        <tr class="row">
+            <th>Evening</th>
+            <td colspan="5" style="background-color: crimson;">Closed</td>
+            <td colspan="2" style="background-color: darkseagreen;">Emergency Only</td>
+        </tr>
+    </table>
+
+    <form>
+            <fieldset>
+                <legend>Potential Client Info</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Full Name">
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" placeholder="Phone Number">
+                <label for="email">Email:</label>
+                <input type="text" id="email" placeholder="Email Address">
+            </fieldset>
+        
+                <h4>How Should We Contact You?</h4>
+                <input type="radio" id="choice" name="contact" value="call">
+                <label for="choice1">Call Only</label>
+
+                <input type="radio" id="choice" name="contact" value="email">
+                <label for="choice2">Email Only</label>
+
+                <input type="radio" id="choice" name="contact" value="both" checked="checked">
+                <label for="choice3">Call and Email</label>
+        
+                <h4>What Services Would You Like Information On?</h4>
+                <input type="checkbox" id="Servicechoice1" name="service" value="General" checked="checked">
+                <label for="Servicechoice1">General Services</label>
+
+                <input type="checkbox" id="Servicechoice2" name="service" value="call">
+                <label for="Servicechoice2">Call Center Services</label>
+
+                <input type="checkbox" id="Servicechoice3" name="service" value="tech">
+                <label for="Servicechoice3">Technology Services</label>
+
+                <input type="checkbox" id="Servicechoice4" name="service" value="all">
+                <label for="Servicechoice4">All of the Above</label>
+
+                <h4>How Did you Hear About Us?</h4>
+                <label for="how">Method</label>
+                <select id="how">
+                    <option value="Social">Social Media</option>
+                    <option value="Word">Word of Mouth</option>
+                    <option value="current">Current Employee</option>
+                    <option value="website">Company Website</option>
+                </select>
+            
+        </form>
+    </form>
+</body>
+</html>
