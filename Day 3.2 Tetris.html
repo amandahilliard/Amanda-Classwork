@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris Practice</title>
+</head>
+<style>
+    .main{
+        display: flex;
+        flex-flow: row wrap;  
+    }
+    .box{
+        flex-basis: calc(10% - 0px);
+        padding-top: 10%;
+        box-sizing: border-box;
+    }   
+    .box:not(.black){
+        box-shadow: 1px 1px 5px gray inset;
+    }
+    .cyan{
+        background-color: cyan;
+    }
+    .green{
+        background-color: lightgreen;
+    }
+    .yellow{
+        background-color: yellow;
+    }
+    .purple{
+        background-color: purple;
+    }
+    .black{
+        background-color: black;
+    }
+    .blue{
+        background-color: blue;
+    }
+    .orange{
+        background-color: orange;
+    }
+    .red{
+        background-color: red;
+    }
+    .top-border{
+        border-top: 1px solid black;
+    }
+    .bottom-border{
+        border-bottom: 1px solid black;
+    }
+    .right-border{
+        border-right: 1px solid black;
+    }
+    .left-border{
+        border-left: 1px solid black;
+    }
+    
+</style>
+<body>
+    <div class="main">
+            <div class="box cyan top-border bottom-border left-border"></div>
+            <div class="box cyan top-border bottom-border"></div>
+            <div class="box cyan top-border bottom-border"></div>
+            <div class="box cyan top-border bottom-border right-border"></div>
+            <div class="box green top-border bottom-border left-border right-border"></div>
+            <div class="box yellow"></div>
+            <div class="box yellow"></div>
+            <div class="box purple"></div>
+            <div class="box purple"></div>
+            <div class="box black"></div>
+            <div class="box blue"></div>
+            <div class="box blue"></div>
+            <div class="box orange"></div>
+            <div class="box black"></div>
+            <div class="box green"></div>
+            <div class="box green"></div>
+            <div class="box red"></div>
+            <div class="box red"></div>
+            <div class="box purple"></div>
+            <div class="box black"></div>
+            <div class="box blue"></div>
+            <div class="box blue"></div>
+            <div class="box orange"></div>
+            <div class="box orange"></div>
+            <div class="box orange"></div>
+            <div class="box green"></div>
+            <div class="box black"></div>
+            <div class="box red"></div>
+            <div class="box red"></div>
+            <div class="box orange"></div>
+    </div>
+</body>
+</html>
