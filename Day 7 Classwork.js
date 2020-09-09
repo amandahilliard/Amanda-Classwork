@@ -80,9 +80,24 @@ let number = parseInt(prompt("Give me a number between 1 and 100"));
 if(number % 2 ===0){
     console.log("That number is Even");
 }
-else if(number % 3 ===0){
+else {
     console.log("That number is Odd");
-    }
+}
+
+if(number > 50){
+    console.log("That number is greater than 50");
+}
+else {
+    console.log("That number is less than or equal to 50");
+}
+
+for (let i = 1; i < number; i++){
+    console.log(i);   
+}
+
+for (let i = 100; i > number; i--){ 
+    console.log(i);
+}
 
 if(name.toLowerCase() === "amanda"){
     alert("That's a great name!")
