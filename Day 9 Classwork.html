@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 9 Classwork</title>
+    <style>
+        div{
+            height: 100px;
+            text-align: center;
+            color: white;
+            font-size: 100px;
+        }
+        .green-bg{
+            background-color: green;
+        }
+        .red-bg{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="green-bg" id="clock"></div>
+
+
+    <script>
+        //Javascript goes in here//
+        let timer = parseInt(prompt("Select Time to Begin Countdown in Seconds"))
+        let clock = document.getElementById("clock");
+        clock.innerText = timer; 
+        window.setTimeout(function(){
+            clock.classList.remove("green-bg");
+            clock.classList.add("red-bg");
+        }, timer * 1000)
+
+        let timerInterval = window.setInterval(function(){
+            timer--;
+            clock.innerText = timer;
+            if(timer === 0){
+                window.clearInterval(timerInterval);
+            }
+        }, 1000)
+    </script>
+</body>
+</html>

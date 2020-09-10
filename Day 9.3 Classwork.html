@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 9 Classwork</title>
+    <style>
+        div{
+        height: 200px;
+        width: 200px;
+        border: 2px solid black;
+    }
+    </style>
+</head>
+<body>
+    <div class="class1 class3">Div 1</div>
+    <div class="class2">Div 2</div>
+    <div class="class2 class4">Div 3</div>
+    <div class="class1 class4">Div 4</div>
+    <div class="class1 class2">Div 5</div>
+    <div class="class5">Div 6</div>
+    <div class="class5">Div 7</div>
+    <div class="class1 class5" id="div8">Div 8</div>
+    <div class="class5 class4" id="div9">Div 9</div>
+    <div class="class1" id="div10">Div 10</div>
+
+    <script>
+        let orange = document.getElementsByClassName("class1");
+        for(let i = 0; i < orange.length; i++){
+            orange[i].style.borderColor = "orange";
+        }
+
+        let red = document.getElementsByClassName("class3");
+        for(let i = 0; i < red.length; i++){
+            red[i].style.color = "red";
+        }
+
+        let blue = document.getElementsByClassName("class4");
+        for(let i = 0; i < blue.length; i++){
+            blue[i].style.color = "blue";
+        }
+
+        let classDivs5 = document.getElementsByClassName("class5");
+        for(let i = 0; i < classDivs5.length; i++){
+            classDivs5[i].classList.replace("class5", "class6");
+        }
+
+        let classDivs7 = document.getElementsByTagName("div");
+        for(let i = 0; i < classDivs7.length; i++){
+            classDivs7[i].classList.add("class7");
+        }
+
+        document.getElementById("div8").remove();
+
+        let classDivs2 = document.getElementsByClassName("class2");
+        for(let i = 0; i < classDivs2.length; i++){
+            classDivs2[i].style.backgroundColor = "black";
+            classDivs2[i].style.color = "white";
+        }
+
+        let div10 = document.getElementById("div10");
+        div10.style.width = (`${div10.clientWidth * .42}px`);
+        div10.style.height = (`${div10.clientHeight * .42}px`);
+        div10.id = "div10new";
+
+        let div9 = document.getElementById("div9");
+        document.body.prepend("div9");
+
+    </script>
+</body>
+</html>
