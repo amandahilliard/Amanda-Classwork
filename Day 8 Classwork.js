@@ -129,3 +129,22 @@ console.log(arr1.map(function(val){
 //Array One should have all numbers divisible by 2
 //Array Two should have all numbers between 16 and 25 (inclusive)
 //Array Three should have all numbers divisible by 4 AND 3
+
+let array1 = [];
+let array2 = [];
+let array3 = [];
+
+for(let i = 1; i <= 100; i++){
+    if(i % 2 === 0){
+        array1.push(i)
+    }
+    if(i >= 16 && i <= 25){
+        array2.push(i)
+    }
+    if(i % 3 === 0 && i % 4 === 0){
+        array3.push(i)
+    }
+}
+console.log(array1);
+console.log(array2);
+console.log(array3);
