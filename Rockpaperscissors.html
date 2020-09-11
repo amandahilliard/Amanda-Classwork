@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Rock Paper Scissors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        main, header{
+            display: block;
+        }
+        .text{
+            color: white;
+            text-align: center;
+        }
+        .heading{
+            color: red;
+        }
+        .container{
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .flex33{
+            flex-basis: 33%;
+        }
+        .content{
+            width: 100%;
+            margin: auto;
+            height: 50px;
+            margin: 5px;
+        }
+        .buttonContainer{
+            height: 75px;  
+            justify-content: space-around;
+        }
+        .choice{
+            flex-basis: calc(100% / 5);
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 5px;
+            cursor: pointer;
+            font-size: 25px;
+        }
+        .rock{
+            background-color: #BA5C12;
+        }
+        .paper{
+            background-color:#41658A;
+        }
+        .scissors{
+            background-color: #A19B91;
+        }
+    </style>
+</head>
+<body style="background-color: #361D2E;">
+    <header>
+        <h1 class="text" style="font-size: 50px">Rock Paper Scissors</h1>
+        <h2 class="text" style="font-size: 45px">Let's Play!</h2>
+       <h2 class="text heading game" style="font-size: 40px">Game <span id="game">1</span></h2>
+       <div class="text container content">
+            <div class="text flex33" style="font-size: 35px">Wins: <span id="win">0</span></div>
+            <div class="text flex33" style="font-size: 35px">Ties: <span id="tie">0</span></div>
+            <div class="text flex33" style="font-size: 35px">Losses: <span id="loss">0</span></div>
+       </div>
+    </header>
+    <main>
+        <div class="content selection text" id="computer" style="font-size: 30px">The Computer Hasn't picked yet</div>
+        <div class="content selection text" id="user" style="font-size: 30px">You haven't picked yet</div>
+        <div class="content selection text"></div>
+        <div class="buttonContainer container content">
+            <button class="choice rock flex33" id="rock">Rock</button>
+            <button class="choice paper flex33"  id="paper">Paper</button>
+            <button class="choice scissors flex33"  id="scissors">Scissors</button>
+        </div>
+    </main>
+    <script>
+        document.querySelector(".rock").addEventListener("click", function(e){
+                let choice1 = e.target.innerText;
+                return document.getElementById("user").innerText = "You Have Chosen Rock";
+        })
+
+        document.querySelector(".paper").addEventListener("click", function(e){
+                let choice2 = e.target.innerText;
+                return document.getElementById("user").innerText = "You Have Chosen Paper";
+        })
+
+        document.querySelector(".scissors").addEventListener("click", function(e){
+                let choice3 = e.target.innerText;
+                return document.getElementById("user").innerText = "You Have Chosen Scissors";
+        })
+        
+        document.querySelectorAll(".choice").forEach(function(div){
+            div.addEventListener("click", function(e){
+                let type = e.target.innerText;
+             
+                let computerGuess = Math.floor(Math.random() * 3) + 1;
+                if(computerGuess === 1){
+                    return document.getElementById("computer").innerText = "The Computer Has Chosen Rock";
+                }
+                else if(computerGuess === 2){
+                    return document.getElementById("computer").innerText = "The Computer Has Chosen Paper";
+                }
+                else{
+                    return document.getElementById("computer").innerText = "The Computer Has Chosen Scissors";
+                }
+            })
+        })
+
+        let rock = document.getElementById("rock");
+        let paper = document.getElementById("paper");
+        let scissors = document.getElementById("scissors");
+        let computerGuess = Math.floor(Math.random() * 3) + 1;
+        let wins = document.getElementById("win");
+        if(computerGuess === 1 && computerGuess === rock){
+            console.log(`${wins}`);
+        }
+        else if(computerGuess === 2){
+            return document.getElementById("computer").innerText = "The Computer Has Chosen Paper";
+        }
+        else{
+            return document.getElementById("computer").innerText = "The Computer Has Chosen Scissors";
+        }
+
+    </script>
+</body>
+</html>
