@@ -64,15 +64,20 @@
     <script>
         document.querySelectorAll(".leftDiv").forEach(function(div){
             div.addEventListener("click", function(e){
-                let text = e.target.innerText;
-                let rightDiv = document.getElementById(`r${text}`);
-                //Need to add if statement to remove if there//
-                //Then append it to bottom of right box//
+              let text = e.target.innerText;
+              let rightDiv = document.getElementById(`r${text}`);
+              if(!!rightDiv){
+                rightDiv.remove(); 
+              }
+              else{
+                let newDiv = document.createElement("div");
+                newDiv.id = `r${text}`;
+                newDiv.classList.add("rightDiv");
+                newDiv.innerText = text;
+                document.querySelector(".right").append(newDiv);
+              }
             })
-        })
-
-
-
+       })
     </script>
   </body>
 </html>
