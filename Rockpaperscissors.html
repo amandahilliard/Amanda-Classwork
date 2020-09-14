@@ -67,14 +67,23 @@
     <main>
         <div class="content selection text" id="computer" style="font-size: 30px">The Computer Hasn't picked yet</div>
         <div class="content selection text" id="user" style="font-size: 30px">You haven't picked yet</div>
-        <div class="content selection text"></div>
+        <div class="content selection text" id="outcome"></div>
         <div class="buttonContainer container content">
             <button class="choice rock flex33" id="rock">Rock</button>
             <button class="choice paper flex33"  id="paper">Paper</button>
             <button class="choice scissors flex33"  id="scissors">Scissors</button>
         </div>
     </main>
+    <div class="content selection text" id="chooseagain"></div>
     <script>
+         let stats = {
+            games: 0,
+            win: 0,
+            tie: 0,
+            loss: 0
+         }
+
+
         document.querySelector(".rock").addEventListener("click", function(e){
                 let choice1 = e.target.innerText;
                 return document.getElementById("user").innerText = "You Have Chosen Rock";
@@ -94,7 +103,7 @@
             div.addEventListener("click", function(e){
                 let type = e.target.innerText;
              
-                let computerGuess = Math.floor(Math.random() * 3) + 1;
+                let computerGuess = Math.floor(Math.random() * 3) +1;
                 if(computerGuess === 1){
                     return document.getElementById("computer").innerText = "The Computer Has Chosen Rock";
                 }
@@ -104,32 +113,12 @@
                 else{
                     return document.getElementById("computer").innerText = "The Computer Has Chosen Scissors";
                 }
+                stats.games++;
+                document.getElementById("game").innerText = stats.games;
+                document.getElementById("chooseagain").innerText = "Choose a button to play again!";
             })
         })
-
-        let rock = document.getElementById("rock");
-        let paper = document.getElementById("paper");
-        let scissors = document.getElementById("scissors");
-        let computerChoice1 = 1;
-        let computerChoice2 = 2;
-        let computerChoice3 = 3;
-        if(rock === 1){
-            return document.getElementById("tie").;
-        }
-        else if(rock === 2){
-            return document.getElementById("loss").stepUp(1);
-        }
-        else if(rock === 3){
-            return document.getElementById("win").stepUp(1);
-        }
-        unction increase(){
-                if( typeof this.counter == 'undefined' ) {
-					        this.counter = 1;
-				        }
-				
-                var textBox = document.getElementById("text");
-                textBox.value = this.counter;
-                this.counter++;
+       
     </script>
 </body>
 </html>
