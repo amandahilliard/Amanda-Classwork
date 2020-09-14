@@ -110,12 +110,26 @@
         let rock = document.getElementById("rock");
         let paper = document.getElementById("paper");
         let scissors = document.getElementById("scissors");
-        let computerGuess = Math.floor(Math.random() * 3) + 1;
-        let wins = document.getElementById("win");
-        for(let i = ; i = rock; i){
-            console.log(`${wins}`);
+        let computerChoice1 = 1;
+        let computerChoice2 = 2;
+        let computerChoice3 = 3;
+        if(rock === 1){
+            return document.getElementById("tie").;
         }
-
+        else if(rock === 2){
+            return document.getElementById("loss").stepUp(1);
+        }
+        else if(rock === 3){
+            return document.getElementById("win").stepUp(1);
+        }
+        unction increase(){
+                if( typeof this.counter == 'undefined' ) {
+					        this.counter = 1;
+				        }
+				
+                var textBox = document.getElementById("text");
+                textBox.value = this.counter;
+                this.counter++;
     </script>
 </body>
 </html>
